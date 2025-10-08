@@ -1,3 +1,5 @@
+
+# NO 1
 CREATE TABLE anggota (
     id_anggota INT(3) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nm_anggota VARCHAR(30),
@@ -5,6 +7,7 @@ CREATE TABLE anggota (
     ttl_anggota TEXT,
     status_anggota VARCHAR(1)
 );
+
 
 
 CREATE TABLE buku (
@@ -37,11 +40,11 @@ SELECT*FROM pinjam
 
 INSERT INTO anggota (id_anggota, nm_anggota, alamat, ttl_anggota, status_anggota)
 VALUES
-(1, 'dzati', 'bandung', 'bandung, 17 mei 2004', 'y'),
+(1, 'dadang', 'bandung', 'bandung, 17 mei 2004', 'y'),
 (2, 'dina', 'jakarta', 'jakarta, 20 juni 2004', 'y'),
 (3, 'dodi', 'surabaya', 'surabaya, 15 agustus 2004', 'n'),
 (4, 'dina', 'medan', 'medan, 10 oktober 2004', 'y'),
-(5, 'dina', 'semarang', 'semarang, 25 desember 2004', 'n');
+(5, 'dina sari', 'semarang', 'semarang, 25 desember 2004', 'n');
 
 INSERT INTO anggota (id_anggota, nm_anggota, alamat, ttl_anggota, status_anggota)
 VALUES
@@ -70,6 +73,8 @@ INSERT INTO pinjam (id_pinjam, tgl_pinjam, jumlah_pinjam, tgl_kembali, id_anggot
 VALUES
 (7, '2025-10-08', 6, '2025-10-15', 2, 126);
 
+#No 2
+
 
 #menampilkan data anggota yang pernah meminjam buku
 SELECT anggota.id_anggota, anggota.nm_anggota, anggota.alamat, anggota.ttl_anggota, anggota.status_anggota
@@ -95,8 +100,6 @@ UPDATE anggota
 SET status_anggota = 'aktif';
 
 SELECT * FROM anggota;
-
-
 
 SELECT buku.kd_buku, buku.judul_buku, buku.pengarang, buku.penerbit, buku.jenis_buku, 
     pinjam.tgl_pinjam, pinjam.tgl_kembali, anggota.nm_anggota
